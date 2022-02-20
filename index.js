@@ -10,12 +10,15 @@ let cardsEl = document.getElementById("cards-el")
 
 let player = {
   name : "Honza",
-  credit : 2000
+  credit : 2000,
+  sayHello: function(){
+    console.log("DObrej šéfe")
+  }
   }
 
 let playerEl = document.getElementById("player-el")
 playerEl.textContent = player.name + " " + player.credit + " CZK"
-
+player.sayHello();
 
 function getRandomCard(){
   let randomNumber = Math.floor(Math.random()*13)+1;
@@ -51,9 +54,14 @@ function renderGame(){
   } else if (sum === 21) {
     message = "Máš Blackjack bráško";
     hasBlackJack = true;
+    player.credit+=100;
+    playerEl.textContent = player.name + " " + player.credit + " CZK"
+
   } else {
     message = "Jseš mimo hru, máš vice jak 21."
     isAlive = false;
+    player.credit-=100;
+    playerEl.textContent = player.name + " " + player.credit + " CZK"
   }
   messageEl.textContent = message;
 }
