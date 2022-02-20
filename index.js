@@ -5,14 +5,18 @@ let hasBlackJack = false;
 let isAlive = true;
 let message = "";
 
-if (sum <= 20) {
-  message = "Chceš ještě další kartu? 🧐";
-} else if (sum === 21) {
-  message = "Máš Blackjack bráško 🥳";
-  hasBlackJack = true;
-} else {
-  message = "Jseš mimo hru, máš vice jak 21. 😭"
-  isAlive = false;
+
+function startGame(){
+  if (sum <= 20) {
+    message = "Chceš ještě další kartu? 🧐";
+  } else if (sum === 21) {
+    message = "Máš Blackjack bráško 🥳";
+    hasBlackJack = true;
+  } else {
+    message = "Jseš mimo hru, máš vice jak 21. 😭"
+    isAlive = false;
+  }
+  console.log(message);
 }
 
 console.log(hasBlackJack);
