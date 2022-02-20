@@ -1,5 +1,5 @@
-let firstCard = 10;
-let secondCard = 4;
+let firstCard = getRandomCard();
+let secondCard = getRandomCard();
 let cards = [firstCard, secondCard];
 let sum = firstCard + secondCard;
 let hasBlackJack = false;
@@ -11,13 +11,30 @@ let sumEl = document.getElementById("sum-el") //už umíme dávno
 let cardsEl = document.getElementById("cards-el")
 
 
+function getRandomCard(){
+  let randomNumber = Math.floor(Math.random()*13)+1;
+  if (randomNumber === 1){
+    return 11
+  } else if (randomNumber > 10 && randomNumber <= 13){
+    return 10
+  } else {
+    return randomNumber
+  }
+}
+
+
 function startGame(){
   renderGame();
 }
 
 function renderGame(){
+  sumEl.textContent = "Součet: ";
   sumEl.textContent += sum;
-  cardsEl.textContent += cards[0] + " " + cards[1];
+  cardsEl.textContent = "Karty: "
+  for (let i = 0; i < cards.length; i++) {
+    cardsEl.textContent += cards[i] + " ";
+  }
+
   if (sum <= 20) {
     message = "Chceš ještě další kartu?";
   } else if (sum === 21) {
@@ -31,7 +48,9 @@ function renderGame(){
 }
 
 function newCard(){
-  let card = 7;
+  let card = getRandomCard();
+  cards.push(card);
+  console.log(cards);
   sum += card;
   renderGame();
 
