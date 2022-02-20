@@ -8,6 +8,14 @@ let sumEl = document.getElementById("sum-el") //už umíme dávno
 //let sumEl = document.querySelector("#sum-el") //Více profesionáln možnost, proto je potřeba být více specifický
 let cardsEl = document.getElementById("cards-el")
 
+let player = {
+  name : "Honza",
+  credit : 2000
+  }
+
+let playerEl = document.getElementById("player-el")
+playerEl.textContent = player.name + " " + player.credit + " CZK"
+
 
 function getRandomCard(){
   let randomNumber = Math.floor(Math.random()*13)+1;
