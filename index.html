@@ -8,9 +8,13 @@
   <body>
     <h1>Blackjack</h1>
     <p id="message-el">Chceš si zahrát jedno kolo?</p>
-    <p>Karty: </p>
+    <p id="cards-el">Karty: </p>
     <p id="sum-el">Součet: </p>
-    <button onclick="startGame()">ZAČNI HRU</button>
+    <div class="btn-grp">
+      <button onclick="startGame()">ZAČNI HRU</button>
+      <button onclick="newCard()">DALŠÍ KARTA</button>
+    </div>
+
   <script src="index.js"></script>
   </body>
 </html>

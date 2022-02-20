@@ -17,7 +17,12 @@ h1 {
   font-style: italic;
 }
 
+.btn-grp {
+  display: inline-block;
+}
+
 button {
+  display: block;
   color: #016f32;
   width: 300px;
   background-color: goldenrod;
@@ -27,4 +32,6 @@ button {
   padding-bottom: 5px;
   border: none;
   border-radius: 2px;
+  margin-bottom: 4px;
+  margin-top: 4px;
 }

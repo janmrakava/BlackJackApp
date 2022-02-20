@@ -5,10 +5,13 @@ let hasBlackJack = false;
 let isAlive = true;
 let message = "";
 let messageEl = document.getElementById("message-el");
-let sumEl = document.getElementById("sum-el")
-
+let sumEl = document.getElementById("sum-el") //už umíme dávno
+//let sumEl = document.querySelector("#sum-el") //Více profesionáln možnost, proto je potřeba být více specifický
+let cardsEl = document.getElementById("cards-el")
 
 function startGame(){
+  sumEl.textContent += sum;
+  cardsEl.textContent += firstCard + " " + secondCard;
   if (sum <= 20) {
     message = "Chceš ještě další kartu?";
   } else if (sum === 21) {
@@ -19,7 +22,10 @@ function startGame(){
     isAlive = false;
   }
   messageEl.textContent = message;
-  sumEl.textContent += sum;
+}
+
+function newCard(){
+  console.log("Nová karta vytažena");
 }
 
 console.log(hasBlackJack);
