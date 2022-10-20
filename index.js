@@ -34,6 +34,7 @@ function getRandomCard(){
 
 function startGame(){
   isAlive = true;
+  sum = 0
   let firstCard = getRandomCard();
   let secondCard = getRandomCard();
   cards = [firstCard, secondCard];
